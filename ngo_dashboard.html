@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NGO Dashboard - Food Confirmation</title>
+    <link rel="stylesheet" href="ngo_dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>NGO Dashboard</h1>
+      <div class="user-info">
+        <i class="fas fa-user-circle user-icon"></i>
+        <div>
+          <p><strong>NGO Name:</strong> Helping Hands</p>
+          <p><strong>Contact:</strong> +91 91234 56789</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Toggle Buttons -->
+      <div class="toggle-buttons">
+        <button onclick="toggleSection('foodSection', this)">
+          Hide Food Section
+        </button>
+        <button onclick="toggleSection('historySection', this)">
+          Show History Section
+        </button>
+      </div>
+
+      <!-- Section 1: Food Request -->
+      <section id="foodSection" class="section-block">
+        <h2>New Food Donation</h2>
+        <div class="card">
+          <p><strong>Donor Name:</strong> Mohammed Salman</p>
+          <p><strong>Contact:</strong> +91 98765 43210</p>
+          <p><strong>Email:</strong> salman@gmail.com</p>
+          <p><strong>Food Type:</strong> Cooked - Biryani</p>
+          <p><strong>Quantity:</strong> 25 packs</p>
+          <p><strong>Location:</strong> Vellore, Tamil Nadu</p>
+          <p><strong>Pickup Time:</strong> Before 7:00 PM</p>
+
+          <div class="buttons">
+            <button class="accept" onclick="handleDecision(true)">
+              Accept
+            </button>
+            <button class="reject" onclick="handleDecision(false)">
+              Reject
+            </button>
+          </div>
+          <div id="message" class="message"></div>
+        </div>
+      </section>
+
+      <!-- Section 2: History -->
+      <section id="historySection" class="section-block" style="display: none">
+        <h2>Accepted Food History</h2>
+        <div class="history card">
+          <ul id="historyList">
+            <li>No history available</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="ngo_dashboard.js"></script>
+  </body>
+</html>
